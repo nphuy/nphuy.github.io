@@ -1,4 +1,4 @@
-name: Deploy to GH Pages
+name: Build and Deploy
 on: [push]
 jobs:
   build-and-deploy:
@@ -7,8 +7,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Build and Deploy
-      uses: jenkey2011/vuepress-deploy@dev
+    - name: vuepress-deploy
+      uses: jenkey2011/vuepress-deploy@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: nphuy/nphuy.github.io
